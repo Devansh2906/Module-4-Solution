@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello or Goodbye</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        #output {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        p {
+            font-size: 1.2em;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        p.hello {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        p.goodbye {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+    </style>
+</head>
+<body>
+    <h1>Greetings:</h1>
+    <div id="output"></div>
+
+    <script>
+        // Array of names
+        const names = ["John", "Alice", "Jake", "Emma", "Jerry", "Sophia", "Michael"];
+
+        // Get the output div
+        const outputDiv = document.getElementById('output');
+
+        // Loop over the names
+        names.forEach(name => {
+            // Create a paragraph element for each name
+            const paragraph = document.createElement('p');
+            
+            // Check if the name starts with 'j' or 'J'
+            if (name.toLowerCase().startsWith('j')) {
+                paragraph.textContent = `Goodbye ${name}`;
+                paragraph.classList.add('goodbye'); // Add goodbye styling
+            } else {
+                paragraph.textContent = `Hello ${name}`;
+                paragraph.classList.add('hello'); // Add hello styling
+            }
+
+            // Add the paragraph to the output div
+            outputDiv.appendChild(paragraph);
+        });
+    </script>
+</body>
+</html>
